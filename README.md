@@ -45,7 +45,7 @@ with $M$ representing the mass parameter.
 
 The calculation proceeds from the metric tensor $g_{\mu\nu}$ and its inverse.
 
-The Christoffel symbols are calculated using
+The Christoffel symbols are calculated using:
 
 $$
 \Gamma^\sigma_{\mu\nu}
@@ -58,6 +58,26 @@ $$
 -
 \partial_\tau g_{\mu\nu}
 \right).
+$$
+
+The Riemann curvature tensor is then constructed from the Christoffel symbols:
+
+$$
+R^\mu_{\ \nu\rho\sigma}
+=
+\partial_\rho\Gamma^\mu_{\nu\sigma}
+-
+\partial_\sigma\Gamma^\mu_{\nu\rho}
++
+\Gamma^\mu_{\lambda\rho}\Gamma^\lambda_{\nu\sigma}
+-
+\Gamma^\mu_{\lambda\sigma}\Gamma^\lambda_{\nu\rho}.
+$$
+
+The Kretschmann scalar is calculated from:
+
+$$
+K = R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}.
 $$
 
 The Riemann curvature tensor is then constructed from the Christoffel symbols:
