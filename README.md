@@ -41,8 +41,6 @@ The Christoffel symbols are calculated from the metric and its derivatives using
 
 The Riemann curvature tensor is then constructed from the Christoffel symbols and their derivatives.
 
-The covariant Riemann tensor is obtained by lowering the first index of the Riemann tensor with the metric, while the contravariant Riemann tensor is obtained by raising the remaining three indices with the inverse metric.
-
 The Kretschmann scalar is calculated through the full contraction:
 
 `K = Rᵤᵥᵨₛ Rᵘᵛᵨₛ`
