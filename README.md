@@ -41,13 +41,15 @@ The Christoffel symbols are calculated from the metric and its derivatives using
 
 The Riemann curvature tensor is then constructed from the Christoffel symbols and their derivatives.
 
-The covariant and contravariant forms of the Riemann tensor are obtained through index raising and lowering using the metric and inverse metric.
+The covariant Riemann tensor is obtained by lowering the first index of the Riemann tensor with the metric, while the contravariant Riemann tensor is obtained by raising the remaining three indices with the inverse metric.
 
-The Kretschmann scalar is calculated through the contraction:
+The Kretschmann scalar is calculated through the full contraction:
 
-`K = Rᵤᵥᵨₛ Rᵘᵛᵨₛ`
+`K = R<sub>μνρσ</sub> R<sup>μνρσ</sup>`
 
-The Ricci tensor and Ricci scalar are subsequently calculated through tensor contractions.
+where `Rᵤᵥᵨₛ` is the fully covariant Riemann tensor and `Rᵘᵛᵨₛ` is the fully contravariant Riemann tensor.
+
+The Ricci tensor is subsequently calculated by contraction of the Riemann tensor, followed by calculation of the Ricci scalar through contraction with the inverse metric.
 
 ## Technologies
 
