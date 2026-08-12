@@ -45,7 +45,7 @@ The covariant Riemann tensor is obtained by lowering the first index of the Riem
 
 The Kretschmann scalar is calculated through the full contraction:
 
-`K = R<sub>μνρσ</sub> R<sup>μνρσ</sup>`
+`K = Rᵤᵥᵨₛ Rᵘᵛᵨₛ`
 
 where `Rᵤᵥᵨₛ` is the fully covariant Riemann tensor and `Rᵘᵛᵨₛ` is the fully contravariant Riemann tensor.
 
