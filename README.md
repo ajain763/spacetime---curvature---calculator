@@ -12,97 +12,55 @@ The tensor operations are explicitly implemented using Python, SymPy, and NumPy,
 
 The program calculates:
 
-* The inverse metric
-* Christoffel symbols
-* Riemann curvature tensor
-* Covariant Riemann curvature tensor
-* Contravariant Riemann curvature tensor
-* Kretschmann scalar
-* Ricci tensor
-* Ricci scalar
+- The inverse metric
+- Christoffel symbols
+- Riemann curvature tensor
+- Covariant Riemann curvature tensor
+- Contravariant Riemann curvature tensor
+- Kretschmann scalar
+- Ricci tensor
+- Ricci scalar
 
 ## Schwarzschild Metric
 
-The metric used in the calculation is
+The metric used is the Schwarzschild metric in spherical coordinates:
 
-$$
-ds^2 =
--\left(1-\frac{2M}{r}\right)dt^2
-+
-\left(1-\frac{2M}{r}\right)^{-1}dr^2
-+
-r^2d\theta^2
-+
-r^2\sin^2(\theta)d\phi^2
-$$
+`(t, r, θ, φ)`
 
-The coordinates are
+with mass parameter `M`.
 
-$$
-(t,r,\theta,\phi)
-$$
-
-where $M$ is the mass parameter.
+The metric components are implemented directly in the Python code.
 
 ## Method
 
-The calculation begins by defining the metric tensor $g_{\mu\nu}$ and obtaining its inverse $g^{\mu\nu}$.
+The calculation begins by defining the metric tensor `g` and obtaining its inverse `g⁻¹`.
 
-The Christoffel symbols are calculated using
+The Christoffel symbols are calculated from the metric and its derivatives using the standard definition:
 
-$$
-\Gamma^\sigma_{\mu\nu}
-======================
+`Γᵅ_ᵦᵧ = ½ gᵅᵟ (∂ᵦgᵟᵧ + ∂ᵧgᵟᵦ − ∂ᵟgᵦᵧ)`
 
-\frac{1}{2}g^{\sigma\tau}
-\left(
-\partial_\mu g_{\tau\nu}
-+
-\partial_\nu g_{\tau\mu}
-------------------------
+The Riemann curvature tensor is then constructed from the Christoffel symbols and their derivatives.
 
-\partial_\tau g_{\mu\nu}
-\right)
-$$
+The covariant and contravariant forms of the Riemann tensor are obtained through index raising and lowering using the metric and inverse metric.
 
-The Riemann curvature tensor is then constructed from the Christoffel symbols:
+The Kretschmann scalar is calculated through the contraction:
 
-$$
-R^\mu_{\ \nu\rho\sigma}
-=======================
+`K = Rᵤᵥᵨₛ Rᵘᵛᵨₛ`
 
-## \partial_\rho\Gamma^\mu_{\nu\sigma}
-
-\partial_\sigma\Gamma^\mu_{\nu\rho}
-+
-\Gamma^\mu_{\lambda\rho}\Gamma^\lambda_{\nu\sigma}
---------------------------------------------------
-
-\Gamma^\mu_{\lambda\sigma}\Gamma^\lambda_{\nu\rho}
-$$
-
-The Kretschmann scalar is calculated by contracting the Riemann tensor:
-
-$$
-K =
-R_{\mu\nu\rho\sigma}
-R^{\mu\nu\rho\sigma}
-$$
-
-The Ricci tensor is obtained through contraction of the Riemann tensor, and the Ricci scalar is subsequently calculated by contracting the Ricci tensor with the inverse metric.
+The Ricci tensor and Ricci scalar are subsequently calculated through tensor contractions.
 
 ## Technologies
 
-* **Python**
-* **SymPy** – symbolic mathematics, differentiation, matrices, and algebraic simplification
-* **NumPy** – tensor-array storage and iteration
+- Python
+- SymPy – symbolic mathematics, differentiation, matrices, and algebraic simplification
+- NumPy – tensor-array storage and iteration
 
 ## Files
 
-* `curvature_calculator.py` – Python implementation of the symbolic curvature calculations
-* `Symbolic_GR.ipynb` – Jupyter Notebook containing the symbolic calculation
-* `README.md` – Project documentation
-* `.gitignore` – Files and directories excluded from version control
+- `curvature_calculator.py` – Python implementation of the symbolic curvature calculations
+- `Symbolic_GR.ipynb` – Jupyter Notebook containing the symbolic calculation
+- `README.md` – Project documentation
+- `.gitignore` – Files excluded from version control
 
 ## Requirements
 
@@ -112,38 +70,3 @@ Install the required packages with:
 
 ```bash
 pip install sympy numpy
-```
-
-## Running the Project
-
-### Python script
-
-Run the Python implementation with:
-
-```bash
-python curvature_calculator.py
-```
-
-### Jupyter Notebook
-
-The notebook can be opened with:
-
-```bash
-jupyter notebook Symbolic_GR.ipynb
-```
-
-## Purpose
-
-This project demonstrates the computational implementation of tensor calculus in General Relativity.
-
-It combines mathematical formulation with explicit algorithmic implementation of tensor operations using Python and symbolic computation.
-
-## Future Improvements
-
-Possible extensions include:
-
-* Allowing user-defined metric tensors as inputs
-* Supporting additional spacetime metrics
-* Automating tensor-index operations
-* Adding additional curvature invariants
-* Improving computational efficiency for symbolic calculations
